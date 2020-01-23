@@ -4,8 +4,8 @@ pipeline{
         stage('Build'){
             steps{
                 sh 'export BUILD_ID=dontKillMe'
-              
-                sh 'nohup java -jar /var/lib/jenkins/workspace/Jenkins_demo/target/demo-0.0.1-SNAPSHOT.jar &'
+          
+                sh 'nohup java -Dhudson.util.ProcessTree.disable=true -jar /var/lib/jenkins/workspace/Jenkins_demo/target/demo-0.0.1-SNAPSHOT.jar &'
             }
         }
     }
